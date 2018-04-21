@@ -15,8 +15,9 @@ import io.github.amadeu01.clone2048.model.Move;
 public class GameViewModel implements ViewModel {
     private Board model;
 
-    public final ObservableArrayMap<String, Integer> tiles = new ObservableArrayMap<>();
+    public final ObservableArrayMap<String, String> tiles = new ObservableArrayMap<>();
     public final ObservableField<String> score = new ObservableField<>();
+    public final ObservableField<String> winner = new ObservableField<>();
 
     public GameViewModel() {
         this.model = new Board();
