@@ -10,6 +10,9 @@ Model <-- ModelView <--> View
 View has a reference to ViewModel but ViewModel has no information about the View.
 he MVVM pattern supports two-way data binding between the View and ViewModel and there is a many-to-one relationship between View and ViewModel.
 
+---
+
+# Components
 
 ## Model
 Model refers either to a domain model, which represents real state content (an object-oriented approach), or to the data access layer, which represents content (a data-centric approach).
