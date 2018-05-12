@@ -3,6 +3,8 @@ package io.github.amadeu01.clone2048.viewmodel;
 import android.databinding.ObservableArrayMap;
 import android.databinding.ObservableField;
 
+import java.util.HashMap;
+
 import io.github.amadeu01.clone2048.model.Board;
 import io.github.amadeu01.clone2048.model.Move;
 
@@ -13,14 +15,16 @@ import io.github.amadeu01.clone2048.model.Move;
  */
 
 public class GameViewModel implements ViewModel {
-    private Board model;
+    private Board boardModel;
 
     public final ObservableArrayMap<String, String> tiles = new ObservableArrayMap<>();
     public final ObservableField<String> score = new ObservableField<>();
     public final ObservableField<String> winner = new ObservableField<>();
 
     public GameViewModel() {
-        this.model = new Board();
+        this.boardModel = new Board();
+        HashMap<String, String> tileHashMap = boardModel.newGame();
+        tiles.putAll(tileHashMap);
     }
 
     public void onMove(Move move) {
